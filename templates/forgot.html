@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Forgot password</title>
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}" />
+    <div class="form-container">
+        <form method="POST" action="{% url 'login' %}" class="form-wrap rounded shadow-lg bg-primary">
+            {% csrf_token %}
+            <h2 style="color: #fff;">Forgot Password</h2>
+            <div class="form-box">
+                <input type="text" placeholder="Enter Email" name="email" />
+            </div>
+            <a href="{% url 'login' %}" style="color: orange;">Login</a>
+            <div class="form-submit">
+              <input class="btn btn-warning rounded" type="submit" value="Send OTP" />
+            </div>
+        </form>
+    </div>
+{% endblock %}

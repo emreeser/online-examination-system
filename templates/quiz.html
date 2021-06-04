@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Exam</title>
+{% endblock %}
+
+{% block content %}
+    <div id="question_container" class="container border border-success rounded
+            col-lg-7 col-md-10 col-sm-12 p-5">
+        <form method="POST">
+            {% csrf_token %}
+            {% for qus in q %}
+                <div class="m-1 each_qus">
+                    {% if qus.question.image %}
+                        <img src="{{qus.question.image.url}}" />
+                    {% endif %}
+                    <h5>{{qus.question.question}}</h5>
+                    <div class="answer_input">
+                        <input type="radio" name="{{qus.question.id}}" required value="A">{{qus.question.optionA}}<br>
+                        <input type="radio" name="{{qus.question.id}}" required value="B">{{qus.question.optionB}}<br>
+                        <input type="radio" name="{{qus.question.id}}" required value="C">{{qus.question.optionC}}<br>
+                        <input type="radio" name="{{qus.question.id}}" required value="D">{{qus.question.optionD}}<br>
+                    </div>
+                    
+                </div>
+            {% endfor %}
+            {% comment %} <input type="hidden" name="qid" value="{{q.id}}"> {% endcomment %}
+            <div style="width: 100%; text-align: center;">
+                <a class="btn btn-danger" href="{% url 'finish' %}">Submit</a>
+            </div>
+        </form>
+    </div>
+    <br>
+{% endblock %}

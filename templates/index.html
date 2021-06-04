@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Exams</title>
+{% endblock %}
+
+{% block content %}
+    <div class="border border-success col-lg-6 col-md-7 col-sm-11 rounded" style="margin: auto; background: #ffffffe6">
+        {% for e in es_zip %}
+            <br>
+            <h4 style="color: limegreen;">{{e.title}}</h4>
+            <p><span style="font-weight: bold; color: orange;">Start :</span> {{e.start}}<br>
+                <span style="font-weight: bold; color: orange;">End :</span> {{e.end}}</p>
+<!--            <p><span style="font-weight: bold; color: orange;">Duration:</span> {{e.duration}} min</p>-->
+            {% if e.is_active %}
+                <center><a class="btn btn-danger" href="{% url 'exam' e.id %}">Start exam</a></center>
+            {% else %}
+                <p style="font-weight: bold; color: red;">You missed the exam!</p>
+            {% endif %}
+            <br>
+            <hr>
+        {% endfor %}
+    </div>
+    <br>
+{% endblock %}

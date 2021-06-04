@@ -1,0 +1,41 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main_header {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Sansita Swashed", cursive;
+}
+
+#question_container {
+  background: #ffffffe6;
+}
+
+.each_qus {
+  margin: 5px;
+  padding-bottom: 70px;
+}
+
+.each_qus h5 {
+  color: red;
+}
+
+.answer_input input {
+  width: 8%;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  color: gold;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.main_footer {
+  margin: 10px;
+  color: gray;
+  text-align: center;
+}

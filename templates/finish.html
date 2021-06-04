@@ -1,0 +1,46 @@
+<html> 
+{% block title %}
+    <title>Finish</title>
+{% endblock %}
+<h1 style="color:red; text-align: center;">!! Exam is Finished !!</h2>
+<br>
+
+{% comment %} <div style="width: 100%; text-align: center; ">
+<a class="btn btn-success" href="{% url 'login' %}" >Go to Homepage</a>
+</div> {% endcomment %}
+<div class="flex-parent jc-center">
+
+<a class="button" href="{% url 'login' %}">Go to Homepage</a>
+</div>
+<style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.flex-parent {
+  display: flex;
+}
+
+.jc-center {
+  justify-content: center;
+}
+</style>
+</html>
